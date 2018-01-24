@@ -31,7 +31,7 @@ public class Coche
     {
         this.marca = marca;
     }
-    
+
     /**
      * Metodo que devuelve la marca.
      */
@@ -39,7 +39,7 @@ public class Coche
     {
         return marca;
     }
-    
+
     /**
      * Metodo para establecer la marca.
      */
@@ -47,7 +47,7 @@ public class Coche
     {
         this.modelo = modelo;
     }
-    
+
     /**
      * Metodo que devuelve la modelo.
      */
@@ -63,7 +63,7 @@ public class Coche
     {
         this.velocidadMaxima = velocidadMaxima;
     }
-    
+
     /**
      * Metodo que devuelve la marca.
      */
@@ -71,7 +71,7 @@ public class Coche
     {
         return velocidadMaxima;
     }
-     
+
     /**
      * Metodo para establecer la marca.
      */
@@ -79,7 +79,7 @@ public class Coche
     {
         this.anoFabricacion = anoFabricacion;
     }
-    
+
     /**
      * Metodo que devuelve la marca.
      */
@@ -87,7 +87,7 @@ public class Coche
     {
         return anoFabricacion;
     }
-    
+
     /**
      * Imprimir por pantalla las caracteristicas.
      */
@@ -99,15 +99,16 @@ public class Coche
         System.out.println("Año de fabricacion: " + anoFabricacion);
         System.out.println("Numero de bastidor: " + numeroDeBastidor);
     }
-    
+
     /**
      * Devolver las caracteristicas.
      */
     public String devolverCaracteristicas()
     {
-    String aDevolver = "";
-    aDevolver = marca + " " + modelo + " " + velocidadMaxima + " " + anoFabricacion + " " + numeroDeBastidor;
-    return aDevolver;
+        String aDevolver = "";
+        aDevolver = "Marca: " + marca + " " + ".Modelo: " + modelo + " " + ".Velocidad maxima: " + velocidadMaxima + "km/h" + " " +
+        ".Año de fabricacion: " + anoFabricacion + " " + ".Numero de bastidor: " + numeroDeBastidor;
+        return aDevolver;
     }
-    
+
 }

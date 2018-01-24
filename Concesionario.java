@@ -30,4 +30,16 @@ public class Concesionario
         listaDeCoches.add(nuevoCoche);
         bastidor ++;
     }
+    
+    /**
+     * Mostrar coches con sus caracteristicas
+     */
+    public void mostrarCoches()
+    {
+        int posicion = 0;
+        while (posicion < listaDeCoches.size()) {
+            System.out.println(listaDeCoches.get(posicion).devolverCaracteristicas());
+            posicion++;
+        }
+    }
 }
