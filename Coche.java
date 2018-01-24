@@ -1,13 +1,11 @@
-
 /**
  * Write a description of class Coche here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Gian Carlo) 
+ * @version (24/01/2018)
  */
 public class Coche
 {
-    // instance variables - replace the example below with your own
     private String marca;
     private String modelo;
     private int velocidadMaxima;
