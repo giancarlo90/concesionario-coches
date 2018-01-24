@@ -71,9 +71,32 @@ public class Coche
     {
         return velocidadMaxima;
     }
+     
+    /**
+     * Metodo para establecer la marca.
+     */
+    public void setAnoFabricacion(int anoFabricacion)
+    {
+        this.anoFabricacion = anoFabricacion;
+    }
+    
+    /**
+     * Metodo que devuelve la marca.
+     */
+    public int getAnoFabricacion()
+    {
+        return anoFabricacion;
+    }
     
     /**
      * Imprimir por pantalla las caracteristicas.
      */
+    public void caracteristicasCoche()
+    {
+        System.out.println("Marca: " + marca);
+        System.out.println("Modelo: " + modelo);
+        System.out.println("Velocidad maxima: " + velocidadMaxima + "km/h");
+        System.out.println("Año de fabricacion: " + anoFabricacion);
+    }
     
 }
