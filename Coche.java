@@ -12,16 +12,18 @@ public class Coche
     private String modelo;
     private int velocidadMaxima;
     private int anoFabricacion;
+    private int numeroDeBastidor;
 
     /**
      * Constructor for objects of class Coche
      */
-    public Coche(String marca, String modelo, int velocidadMaxima, int anoFabricacion)
+    public Coche(String marca, String modelo, int velocidadMaxima, int anoFabricacion, int numeroBastidor)
     {
         this.marca = marca;
         this.modelo = modelo;
         this.velocidadMaxima = velocidadMaxima;
         this.anoFabricacion = anoFabricacion;
+        numeroDeBastidor = numeroBastidor;
     }
 
     /**
@@ -97,6 +99,17 @@ public class Coche
         System.out.println("Modelo: " + modelo);
         System.out.println("Velocidad maxima: " + velocidadMaxima + "km/h");
         System.out.println("Año de fabricacion: " + anoFabricacion);
+        System.out.println("Numero de bastidor: " + numeroDeBastidor);
+    }
+    
+    /**
+     * Devolver las caracteristicas.
+     */
+    public String devolverCaracteristicas()
+    {
+    String aDevolver = "";
+    aDevolver = marca + " " + modelo + " " + velocidadMaxima + " " + anoFabricacion + " " + numeroDeBastidor;
+    return aDevolver;
     }
     
 }
