@@ -11,15 +11,17 @@ public class Coche
     private String marca;
     private String modelo;
     private int velocidadMaxima;
+    private int anoFabricacion;
 
     /**
      * Constructor for objects of class Coche
      */
-    public Coche()
+    public Coche(String marca, String modelo, int velocidadMaxima, int anoFabricacion)
     {
-        marca = "";
-        modelo = "";
-        velocidadMaxima = 0;
+        this.marca = marca;
+        this.modelo = modelo;
+        this.velocidadMaxima = velocidadMaxima;
+        this.anoFabricacion = anoFabricacion;
     }
 
     /**
@@ -69,4 +71,9 @@ public class Coche
     {
         return velocidadMaxima;
     }
+    
+    /**
+     * Imprimir por pantalla las caracteristicas.
+     */
+    
 }
