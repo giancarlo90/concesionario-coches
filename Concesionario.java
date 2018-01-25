@@ -1,5 +1,5 @@
-
 import java.util.ArrayList;
+import java.util.Iterator;
 /**
  * Write a description of class Concesionario here.
  * 
@@ -102,5 +102,18 @@ public class Concesionario
     {
         Coche car = listaDeCoches.get(bastidor);
         car.setVelocidadMaxima(nuevaVelocidad);
+    }
+    
+    /**
+     * Eliminar objetos por modelo
+     */
+    public void eliminarPorModelo(String modelos)
+    {
+        Iterator <Coche> it = listaDeCoches.iterator();
+        while(it.hasNext()){
+            if(it.next().getModelo().toLowerCase().equals(modelos.toLowerCase())){
+                it.remove();
+            }
+        }
     }
 }
