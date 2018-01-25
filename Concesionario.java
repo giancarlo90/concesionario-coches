@@ -30,7 +30,7 @@ public class Concesionario
         listaDeCoches.add(nuevoCoche);
         bastidor ++;
     }
-    
+
     /**
      * Mostrar coches con sus caracteristicas
      */
@@ -41,5 +41,37 @@ public class Concesionario
             System.out.println(listaDeCoches.get(posicion).devolverCaracteristicas());
             posicion++;
         }
+    }
+
+    /**
+     * Mostrar coches ordenados por velocidad maxima
+     */
+    public void mostrarPorVelocidad()
+    {
+        if(listaDeCoches.size()>0) {
+            ArrayList<Coche> Coches = new ArrayList<>();
+            Coches.addAll(listaDeCoches);
+            Coche cochePrioridadMaxima = Coches.get(0);
+            int prioridadMaxima = 0;
+            int posicion = 0;
+            for(int j = 0; j < listaDeCoches.size(); j++){
+                for(int i=0; i < Coches.size(); i++) {
+                    if(Coches.get(i).getVelocidadMaxima() >= prioridadMaxima){
+                        cochePrioridadMaxima = Coches.get(i);
+                        prioridadMaxima = listaDeCoches.get(i).getVelocidadMaxima();
+                        posicion = i;
+                    }
+                }
+                System.out.println(cochePrioridadMaxima.devolverCaracteristicas());
+                Coches.remove(posicion);
+                prioridadMaxima = 0;
+                posicion = 0;
+            }
+        }
+    }
+
+    public ArrayList<Coche> localizaMayorLoImprimeYLoBorra(ArrayList<Coche> listaDeCoche)
+    {
+        return listaDeCoche;
     }
 }
