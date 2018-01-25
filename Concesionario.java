@@ -1,3 +1,4 @@
+
 import java.util.ArrayList;
 /**
  * Write a description of class Concesionario here.
@@ -64,8 +65,6 @@ public class Concesionario
                 }
                 System.out.println(cochePrioridadMaxima.devolverCaracteristicas());
                 Coches.remove(posicion);
-                prioridadMaxima = 0;
-                posicion = 0;
             }
         }
     }
@@ -93,5 +92,15 @@ public class Concesionario
                 Coches.remove(posicion);
             }
         }
+    }
+    
+    /**
+     * Permita modificar al menos una de las características del objeto con el número 
+     * identificativo indicado por el usuario.
+     */
+    public void cambiarVelocidad(int bastidor, int nuevaVelocidad)
+    {
+        Coche car = listaDeCoches.get(bastidor);
+        car.setVelocidadMaxima(nuevaVelocidad);
     }
 }

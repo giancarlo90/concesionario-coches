@@ -73,6 +73,14 @@ public class Coche
     }
 
     /**
+     * Metodo que devuelve la marca.
+     */
+    public int getBastidor()
+    {
+        return numeroDeBastidor;
+    }
+
+    /**
      * Metodo para establecer la marca.
      */
     public void setAnoFabricacion(int anoFabricacion)
