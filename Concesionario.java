@@ -52,9 +52,9 @@ public class Concesionario
             ArrayList<Coche> Coches = new ArrayList<>();
             Coches.addAll(listaDeCoches);
             Coche cochePrioridadMaxima = Coches.get(0);
-            int prioridadMaxima = 0;
-            int posicion = 0;
             for(int j = 0; j < listaDeCoches.size(); j++){
+                int prioridadMaxima = 0;
+                int posicion = 0;
                 for(int i=0; i < Coches.size(); i++) {
                     if(Coches.get(i).getVelocidadMaxima() >= prioridadMaxima){
                         cochePrioridadMaxima = Coches.get(i);
@@ -79,9 +79,9 @@ public class Concesionario
             ArrayList<Coche> Coches = new ArrayList<>();
             Coches.addAll(listaDeCoches);
             Coche cochePrioridadMaxima = Coches.get(0);
-            int fechaMaxima = 0;
-            int posicion = 0;
             for(int j = 0; j < listaDeCoches.size(); j++){
+                int fechaMaxima = 0;
+                int posicion = 0;
                 for(int i=0; i < Coches.size(); i++) {
                     if(Coches.get(i).getAnoFabricacion() >= fechaMaxima){
                         cochePrioridadMaxima = Coches.get(i);
@@ -91,8 +91,6 @@ public class Concesionario
                 }
                 System.out.println(cochePrioridadMaxima.devolverCaracteristicas());
                 Coches.remove(posicion);
-                fechaMaxima = 0;
-                posicion = 0;
             }
         }
     }
