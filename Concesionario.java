@@ -70,8 +70,30 @@ public class Concesionario
         }
     }
 
-    public ArrayList<Coche> localizaMayorLoImprimeYLoBorra(ArrayList<Coche> listaDeCoche)
+    /**
+     * Mostrar coches ordenados por velocidad maxima
+     */
+    public void mostrarPorFechaDeFabricacion()
     {
-        return listaDeCoche;
+        if(listaDeCoches.size()>0) {
+            ArrayList<Coche> Coches = new ArrayList<>();
+            Coches.addAll(listaDeCoches);
+            Coche cochePrioridadMaxima = Coches.get(0);
+            int fechaMaxima = 0;
+            int posicion = 0;
+            for(int j = 0; j < listaDeCoches.size(); j++){
+                for(int i=0; i < Coches.size(); i++) {
+                    if(Coches.get(i).getAnoFabricacion() >= fechaMaxima){
+                        cochePrioridadMaxima = Coches.get(i);
+                        fechaMaxima = listaDeCoches.get(i).getAnoFabricacion();
+                        posicion = i;
+                    }
+                }
+                System.out.println(cochePrioridadMaxima.devolverCaracteristicas());
+                Coches.remove(posicion);
+                fechaMaxima = 0;
+                posicion = 0;
+            }
+        }
     }
 }
