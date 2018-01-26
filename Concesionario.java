@@ -93,17 +93,19 @@ public class Concesionario
             }
         }
     }
-    
+
     /**
      * Permita modificar al menos una de las características del objeto con el número 
      * identificativo indicado por el usuario.
      */
     public void cambiarVelocidad(int bastidor, int nuevaVelocidad)
     {
-        Coche car = listaDeCoches.get(bastidor);
-        car.setVelocidadMaxima(nuevaVelocidad);
+        if(bastidor > 0 && bastidor < listaDeCoches.size()){
+            Coche car = listaDeCoches.get(bastidor);
+            car.setVelocidadMaxima(nuevaVelocidad);
+        }
     }
-    
+
     /**
      * Eliminar objetos por modelo
      */
