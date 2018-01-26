@@ -75,21 +75,21 @@ public class Concesionario
     public void mostrarPorFechaDeFabricacion()
     {
         if(listaDeCoches.size()>0) {
-            ArrayList<Coche> Coches = new ArrayList<>();
-            Coches.addAll(listaDeCoches);
-            Coche cochePrioridadMaxima = Coches.get(0);
+            ArrayList<Coche> coches = new ArrayList<>();
+            coches.addAll(listaDeCoches);
+            Coche cochePrioridadMaxima = coches.get(0);
             for(int j = 0; j < listaDeCoches.size(); j++){
                 int fechaMaxima = 0;
                 int posicion = 0;
-                for(int i=0; i < Coches.size(); i++) {
-                    if(Coches.get(i).getAnoFabricacion() >= fechaMaxima){
-                        cochePrioridadMaxima = Coches.get(i);
-                        fechaMaxima = listaDeCoches.get(i).getAnoFabricacion();
+                for(int i=0; i < coches.size(); i++) {
+                    if(coches.get(i).getAnoFabricacion() >= fechaMaxima){
+                        cochePrioridadMaxima = coches.get(i);
+                        fechaMaxima = coches.get(i).getAnoFabricacion();
                         posicion = i;
                     }
                 }
                 System.out.println(cochePrioridadMaxima.devolverCaracteristicas());
-                Coches.remove(posicion);
+                coches.remove(posicion);
             }
         }
     }
