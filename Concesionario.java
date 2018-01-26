@@ -59,7 +59,7 @@ public class Concesionario
                 for(int i=0; i < coches.size(); i++) {
                     if(coches.get(i).getVelocidadMaxima() >= prioridadMaxima){
                         cochePrioridadMaxima = coches.get(i);
-                        prioridadMaxima = listaDeCoches.get(i).getVelocidadMaxima();
+                        prioridadMaxima = coches.get(i).getVelocidadMaxima();
                         posicion = i;
                     }
                 }
