@@ -100,7 +100,7 @@ public class Concesionario
      */
     public void cambiarVelocidad(int bastidor, int nuevaVelocidad)
     {
-        if(bastidor > 0 && bastidor < listaDeCoches.size()){
+        if(bastidor >= 0 && bastidor < listaDeCoches.size()){
             Coche car = listaDeCoches.get(bastidor);
             car.setVelocidadMaxima(nuevaVelocidad);
         }
