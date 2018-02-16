@@ -1,3 +1,6 @@
+import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Iterator;
 /**
@@ -15,12 +18,32 @@ public class Concesionario
     /**
      * Constructor for objects of class Concesionario
      */
-    public Concesionario()
+    public Concesionario(String txt)
     {
         // initialise instance variables
         listaDeCoches = new ArrayList<Coche>();
+        introducirDatos(txt);
         bastidor = 0;
     }
+
+    private void introducirDatos(String datos)
+    {
+        try {
+            File archivo = new File(datos + ".txt");
+            Scanner sc = new Scanner(archivo);
+            while (sc.hasNextLine()) {
+                String[] arrayStrings = sc.nextLine().split(" #");
+                System.out.println(arrayStrings);
+                addCoche(arrayStrings[0],arrayStrings[1],Integer.parseInt(arrayStrings[2]),Integer.parseInt(arrayStrings[3]));
+            }
+            sc.close();
+        }
+        catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+    }
+
 
     /**
      * Añade un coche
