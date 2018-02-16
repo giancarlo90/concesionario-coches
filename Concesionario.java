@@ -33,7 +33,6 @@ public class Concesionario
             Scanner sc = new Scanner(archivo);
             while (sc.hasNextLine()) {
                 String[] arrayStrings = sc.nextLine().split(" #");
-                System.out.println(arrayStrings);
                 addCoche(arrayStrings[0],arrayStrings[1],Integer.parseInt(arrayStrings[2]),Integer.parseInt(arrayStrings[3]));
             }
             sc.close();
@@ -43,7 +42,6 @@ public class Concesionario
         }
 
     }
-
 
     /**
      * Añade un coche
@@ -138,6 +136,42 @@ public class Concesionario
         while(it.hasNext()){
             if(it.next().getModelo().toLowerCase().equals(modelos.toLowerCase())){
                 it.remove();
+            }
+        }
+    }
+
+    /**
+     * Metodo para agrupar los coches por año de fabricacion
+     */
+    public void imprimirAgrupadosPorFecha()
+    {
+        ArrayList<Coche> coches = new ArrayList<>();
+        ArrayList<Integer> fechas = new ArrayList<>();
+        coches.addAll(listaDeCoches);
+        Coche cochePrioridadMaxima = coches.get(0);
+        // Bucles para encontrar la distintas fechas y ordenarlas
+        for(int j = 0; j < listaDeCoches.size(); j++){
+            int fechaMaxima = 0;
+            for(int i=0; i < coches.size(); i++) {
+                if(coches.get(i).getAnoFabricacion() >= fechaMaxima){
+                    cochePrioridadMaxima = coches.get(i);
+                    fechaMaxima = coches.get(i).getAnoFabricacion();
+                }
+                fechas.add(fechaMaxima);
+                for(int k=0; k < coches.size(); k++){
+                    if(coches.get(k).getAnoFabricacion() == fechaMaxima){
+                        coches.remove(k);
+                        k--;
+                    }
+                }
+            }
+        }
+        for(int i=0; i < fechas.size(); i++){
+            System.out.println(fechas.get(i));
+            for(int k = 0; k < listaDeCoches.size(); k++){
+                if(listaDeCoches.get(k).getAnoFabricacion() == fechas.get(i)){
+                    System.out.println(listaDeCoches.get(k).devolverCaracteristicas());
+                }
             }
         }
     }
