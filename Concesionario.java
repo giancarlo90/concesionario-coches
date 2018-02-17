@@ -3,6 +3,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Collections;
+import java.util.Comparator;
 /**
  * Write a description of class Concesionario here.
  * 
@@ -148,13 +150,11 @@ public class Concesionario
         ArrayList<Coche> coches = new ArrayList<>();
         ArrayList<Integer> fechas = new ArrayList<>();
         coches.addAll(listaDeCoches);
-        Coche cochePrioridadMaxima = coches.get(0);
         // Bucles para encontrar la distintas fechas y ordenarlas
         for(int j = 0; j < listaDeCoches.size(); j++){
             int fechaMaxima = 0;
             for(int i=0; i < coches.size(); i++) {
                 if(coches.get(i).getAnoFabricacion() >= fechaMaxima){
-                    cochePrioridadMaxima = coches.get(i);
                     fechaMaxima = coches.get(i).getAnoFabricacion();
                 }
                 fechas.add(fechaMaxima);
@@ -166,13 +166,26 @@ public class Concesionario
                 }
             }
         }
+        //Bucles para agrupar e imprimir ordenados por marca
         for(int i=0; i < fechas.size(); i++){
             System.out.println(fechas.get(i));
             for(int k = 0; k < listaDeCoches.size(); k++){
                 if(listaDeCoches.get(k).getAnoFabricacion() == fechas.get(i)){
-                    System.out.println(listaDeCoches.get(k).devolverCaracteristicas());
+                    coches.add(listaDeCoches.get(k));
                 }
             }
+            Collections.sort(coches, new Comparator<Coche>(){
+
+                    @Override
+                    public int compare(Coche o1, Coche o2) {
+                        return o1.getMarca().compareTo(o2.getMarca());
+                    }
+
+                });
+            for(Coche coche : coches){
+                System.out.println(coche.devolverCaracteristicas());
+            }
+            coches.clear();
         }
     }
 }
